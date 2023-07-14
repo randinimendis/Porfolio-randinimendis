@@ -240,7 +240,7 @@ span{
     font-size: 18px;
     margin: 2rem 0  3rem;
 }
-
+/*--=======================================Education section--======================*/
 .education{
     display: flex;
     justify-content: center;
@@ -292,6 +292,7 @@ span{
 .education-content .content .year p{
     font-size: 1.6rem;
 }
+/*
 .skills{
     min-height: auto;
     padding-bottom: 7rem;
@@ -310,7 +311,7 @@ span{
     margin: 0 0 1.5 rem;
 }
 .skills-box .skills-content{
-    position:fixed;
+    position: relative;
     border:  .2rem solid var(--main-color);
     border-radius: .6rem;
     padding: .5rem 1.5rem;
@@ -318,3 +319,94 @@ span{
 .skills-content .progres{
     padding: 1rem 0;
 }
+*/
+/*============================================skills=======================*/
+.skills{
+    display: flex;
+    justify-content: center;
+     align-items: center;
+     flex-direction: column;
+     gap: 2rem;
+     background: var(--second-bg-color);
+     padding-left: 6rem;
+}
+
+.skills__content{
+    row-gap: 3.5rem;
+}
+.skills__title{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    column-gap:.10rem ;
+    font-size: 5rem;
+    font-weight: var(--bg-color);
+    margin-bottom:2.5rem;
+
+}
+
+
+.skills__title i{
+    font-size: 1rem;
+    font-weight: initial;
+}
+
+.skills__info,
+.skills__data,
+.skills__blob{
+display:grid;
+
+}
+
+.skills__info{
+    grid-template-columns: repeat(5,1fr);
+    gap:2rem;
+}
+.skills__data{
+    justify-content: center;
+    text-align: center;
+}
+.skills__blob{
+    width: 200px;
+    height: 200px;
+    background-color: var(--text-color);
+    border-radius: 3rem;
+    place-items: center;
+    margin-bottom: 2rem;
+}
+.skills__blob img{
+    width: 100px;
+}
+
+.skills__name{
+    font-size: var(--text-color);
+    margin-bottom: .25rem;
+}
+
+.skills__subtitle{
+    font-size: var();
+    /*color*/
+}
+
+/*Animation Skills*/
+.skills__blob:hover img{
+    animation:bounce-skills .6s;
+}
+
+@keyframes bounce-skills{
+    0%{
+        transform: translate(0);
+    }
+    20%{
+        transform: translateY(-6px);
+    }
+    40%{
+        transform: translate(0);
+    }
+    60%{
+        transform: translate(-3px);
+    }
+    80%{
+        transform: translate(0);
+    }
+}  
