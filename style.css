@@ -11,10 +11,11 @@
    outline: none;
    scroll-behavior: smooth;
   }
-
+/*#081b29
+#002147*/
 :root{
-    --bg-color:#081b29;
-    --second-bg-color:#112e42;
+    --bg-color:#002147 ;
+    --second-bg-color:#002e63;
     --text-color:#ededed;
     --main-color:#00abf0;
 }
@@ -100,30 +101,44 @@ section{
 
 }
 
-.btn-box{
-    position: relative;
+.btn{
+    display: inline-block;
+    width: fit-content;
+    padding: 1rem;
+    width: 8rem;
+    border-radius: 2rem;
+    cursor: pointer;
+    color: #00abf0;
+    border: 3px solid var(--text-color);
     display: flex;
-    justify-content: space-between;
-    width: 15px;
-    height: 5rem;
-    background: #00abf0;
-    border: 2px solid #00abf0;
-    border-radius: 8px;
-}
-.btn-box .btn{
-    position: relative;
-    display: inline-flex;
-    justify-content:center;
     align-items: center;
-    width: 15rem;
-    height: 100%;
-    background: var(--main-color);
-    border: .2rem solid var(--main-color);
-    border-radius: 8px 8px;
-    font-size: 1.0rem;
+    justify-content: center;
     font-weight: 600;
-    letter-spacing: .1rem;
-    color: var(--bg-color);
+    font-size: 17px;
+    transition: var(--text-color);
+
+}
+.btn:hover{
+    background: var(--main-color);
+    color:var(--text-color);
+}
+
+
+.btn-box .btn{
+    display: inline-block;
+    width: fit-content;
+    padding: 1rem;
+    width: 8rem;
+    border-radius: 2rem;
+    cursor: pointer;
+   
+    border: 3px solid var(--text-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 600;
+    font-size: 17px;
+    transition: var(--text-color);
 }
 
 .home-sci{
@@ -194,7 +209,7 @@ section{
 }
 
 .heading{
-    font-size: 5rem;
+    font-size: 3rem;
     margin-bottom: 3rem;
     text-align: center;
      
@@ -369,13 +384,13 @@ display:grid;
 .skills__blob{
     width: 200px;
     height: 200px;
-    background-color: var(--text-color);
+    background-color: var(--bg-color);
     border-radius: 3rem;
     place-items: center;
     margin-bottom: 2rem;
 }
 .skills__blob img{
-    width: 100px;
+    width: 90px;
 }
 
 .skills__name{
@@ -410,3 +425,93 @@ display:grid;
         transform: translate(0);
     }
 }  
+
+
+.contact {
+    min-height: auto;
+    padding-bottom: 7rem;
+}
+.contact form{
+    max-width: 50rem;
+    margin: 0 auto;
+    text-align: center;
+}
+.contact form .input-box{
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+} 
+.contact form .input-box .input-field{
+    position: relative;
+    width: 49%;
+    margin:  .8rem 0;
+}
+.contact form .input-box .input-field input,
+.contact form .textarea-field textarea{
+    width: 100%;
+    height: 100%;
+    padding: 1.0rem;
+    font-size: 1.0rem;
+    color: var(--text-color);
+    background: transparent;
+    border-radius: .6rem;
+    border: .2rem solid var(--main-color);
+}
+
+
+.contact form .input-box .input-field input::placeholder,
+.contact form .textarea-field textarea::placeholder{
+    color:var(--text-color);
+}
+.contact form .focus{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 100%;
+    background: var(--second-bg-color );
+    border-radius: .6rem;
+    z-index:-1;
+    transition: .5s ;
+    }
+
+.contact form .btn-box .input-field input:focus~.focus,
+.contact form .btn-box .input-field input:valid~.focus,
+.contact form .textarea-field textarea:focus~.focus,
+.contact form .textarea-field textarea:valid~.focus
+{
+    width: 100%;
+}
+
+.contact form .textarea-field{
+    position: relative;
+    margin: .8rem 0 2.7rem;
+    display: flex;
+}
+
+.contact form .textarea-field textarea{
+    resize: none;
+}
+.contact form .btn-box.btns .btn{
+    cursor: pointer;
+}
+
+.project-container{
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    gap: 20px;
+}
+.project{
+    padding:24px;
+    border: 3px solid var(--main-color);
+    border-radius: 20px;
+    text-align: center;
+}
+.project img{
+    width: 250px;
+    
+    border-radius: 30px;
+    margin-bottom: 1rem;
+
+}
