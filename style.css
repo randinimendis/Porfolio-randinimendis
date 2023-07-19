@@ -76,7 +76,15 @@ section{
 
 }
 .home-content{
-    max-width: 700px; /*cide is not working*/
+    display: grid;
+    grid-template-columns:1fr 1fr ;
+    max-width:6000px; /*cide is not working*/
+
+    justify-content: space-between;
+}
+.header-left{
+    text-align: center;
+    margin: auto;
 }
 .home-content.text-animate{
     position: relative;

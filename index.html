@@ -34,9 +34,9 @@
         <!--===========================Main section==================================---->
     <section class="home" id="home">
         <div class="home-content">
-            <div class="header-left"><!--**-->
+            <!--div class="header-left">
                 <img src="./images/PROFILE.png" alt="">
-            </div>
+            </div--->
                   <h1> Hi, I'm <span>Randini Mendis</span> </h1>
                        <div class="text-animate">
                      <h3>Web Developer</h3></div>
@@ -302,16 +302,18 @@
 
     <section class="contact" id="contact">
         <h2 class="heading">Contact <span>Me!</span></h2>
-        <form action="#">
+        <form onsubmit="sendEmail();   return false;">
             <div class="input-box">
 
                 <div class="input-field">
-                    <input type="text" placeholder="Full Name"required>
+                    <input type="text" id="name" placeholder="Full Name"required>
                     <span class="focus"></span>
                 </div>
 
                 <div class="input-field">
-                    <input type="text" placeholder=" Email"required>
+                   
+
+                    <input type="text"  id="email" placeholder=" Email"required>
                     <span class="focus"></span>
                 </div>
 
@@ -320,24 +322,25 @@
             <div class="input-box">
 
                 <div class="input-field">
-                    <input type="number" placeholder="Mobile Number"required>
+                    <input type="number" id="mobile" placeholder="Mobile Number"required>
                     <span class="focus"></span>
                 </div>
 
                 <div class="input-field">
-                    <input type="text" placeholder=" Email Subject"required>
+                    <input type="text" id="Subject" placeholder=" Email Subject"required>
                     <span class="focus"></span>
                 </div>
 
             </div>
 
             <div class="textarea-field">
-                <textarea name="" id="" cols="30" rows="10" placeholder="Your Message" required></textarea>
+                <textarea name="" id="message" cols="30" rows="10" placeholder="Your Message" required></textarea>
                 <span class="focus"></span>
             </div>
 
             <div class="btn-box">
-                <a href="#" class="btn">SUBMIT</a>
+                <button class="btn" type="submit">submit</button>
+               <!--<a href="#" class="btn" type="submit">SUBMIT</a>--> 
             
             </div>
             
@@ -349,7 +352,7 @@
 
         <footer class="footer">
             <div class="footer-text">
-                <p>Copyright & copy; 2023 by codehal | All Rights Reserved</p>
+                <p>Copyright & copy; 2023 by Randini Mendis | All Rights Reserved</p>
             </div>
 
             <div class="footer-iconTop">
@@ -368,6 +371,34 @@
 
 
     <script src="js/script.js"></script>
+    <script src="https://smtpjs.com/v3/smtp.js"></script>
+    <script>
+        var submit =document.getElementById('submit');
+        submit.addEventListener('click',function(e){
+            e.preventDefault();
+            var name= document.getElementById('name').value;
+            var email= document.getElementById('email').value;
+            var mobile= document.getElementById('mobile').value;
+            var sub= document.getElementById('Subject').value;
+            var message= document.getElementById('message').value;
+            var body ='name: ' +name +'<br/>email'+ email+ '<br/>mobile'+ mobile +'<br/>Subject'+Subject+ '<br/>message'+message;
+
+        })
+        function sendEmail(){
+                        Email.send({
+                        Host : "smtp.gmail.com",
+                        Username : "randiniemail@gmail.com",
+                        Password : "0217mendis",
+                        To : 'randiniemail@gmail.com',
+                        From : email,
+                        Subject :Subject,
+                        Body :body
+                    }).then(
+                    message => alert(message)
+                    );
+        }
+       
+    </script>
 </body>
 </html>
 
