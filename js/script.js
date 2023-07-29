@@ -33,5 +33,9 @@ window.onscroll = () => {
   // Sticky header
   let header = document.querySelector('header');
   header.classList.toggle('sticky', scrollY > 100);
+
+  //remove  toggle icon navbar when click navbar link(scroll)
+  menuIcon.classList.remove('bx-x');
+  navbar.classList.remove('active');
 };
   
