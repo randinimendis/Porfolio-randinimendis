@@ -599,7 +599,7 @@ display:grid;
         padding: 10rem 4% 2rem;
     }
 
-    .home{
+    .home .about{
         padding: 0 4%;
     }
     .footer{
@@ -638,7 +638,7 @@ display:grid;
         top: 0;
         left: -100%;
         width: 100%;
-        background: yellowgreen;
+       
         border-top: .1rem solid rgba (0,0,0, .2);
         z-index: -1;
         transition: .25s ease;
@@ -667,6 +667,10 @@ display:grid;
         background: var(--bg-color);
         opacity: .6s;
     }
+
+    .skills__content{
+        
+    }
 }  
 @media (max-width: 520px){
      
@@ -688,3 +692,21 @@ display:grid;
         height: 38px;
     }
 } 
+@media (max-width: 462px){
+    .home-content h1{
+        font-size: 5.2rem;
+    }
+    .education{
+        padding: 10rem 4% 5rem 5%;
+    }
+    .contact from .education-box .education-content{
+        width: 100%;
+    }
+    .footer{
+        flex-direction: column-reverse;
+    }
+    .footer p{
+        margin-top: 2rem;
+    }
+
+}
